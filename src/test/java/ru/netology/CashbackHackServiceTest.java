@@ -5,34 +5,36 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CashbackHackServiceTest {
-   @Test
-    public void shouldCheckUnderBoundary(){
-        CashbackHackService service = new CashbackHackService();
-        int amount =900;
-
-        int actual = service.remain(amount);
-        int expected =100;
-
-       Assert.assertEquals(expected, actual);
-    }
     @Test
-    public void shouldCheckEqualBoundary(){
+    public void shouldCheckUnderBoundary() {
         CashbackHackService service = new CashbackHackService();
-        int amount =1000;
+        int amount = 900;
 
         int actual = service.remain(amount);
-        int expected =0;
+        int expected = 100;
 
         Assert.assertEquals(expected, actual);
     }
-   @Test
-    public void shouldCheckUpperBoundary(){
+
+    @Test
+    public void shouldCheckEqualBoundary() {
         CashbackHackService service = new CashbackHackService();
-        int amount =10001;
+        int amount = 1000;
 
         int actual = service.remain(amount);
-        int expected =999;
+        int expected = 0;
 
-       Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCheckUpperBoundary() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 10001;
+
+        int actual = service.remain(amount);
+        int expected = 999;
+
+        Assert.assertEquals(expected, actual);
     }
 }
