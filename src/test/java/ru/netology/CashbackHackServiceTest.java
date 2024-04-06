@@ -1,11 +1,11 @@
 package ru.netology;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
-    @Test
+   @Test
     public void shouldCheckUnderBoundary(){
         CashbackHackService service = new CashbackHackService();
         int amount =900;
@@ -13,7 +13,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected =100;
 
-        Assertions.assertEquals(expected,actual);
+       Assert.assertEquals(expected, actual);
     }
     @Test
     public void shouldCheckEqualBoundary(){
@@ -23,9 +23,9 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected =0;
 
-        Assertions.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
-    @Test
+   @Test
     public void shouldCheckUpperBoundary(){
         CashbackHackService service = new CashbackHackService();
         int amount =10001;
@@ -33,6 +33,6 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected =999;
 
-        Assertions.assertEquals(expected,actual);
+       Assert.assertEquals(expected, actual);
     }
 }
